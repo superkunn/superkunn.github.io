@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
     
-        <title>我的第一篇文章</title>
+        <title>jekyll blog</title>
 		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
     
 	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
@@ -34,11 +34,9 @@
 			<ul>
 				
 				
-				<li><a href="/tag/article/" title="article"><img src="/assets/img/folder.ico" />article</a></li>
+				<li><a href="/tag/acm/" title="acm"><img src="/assets/img/folder.ico" />acm</a></li>
 				
-				<li><a href="/tag/essay/" title="essay"><img src="/assets/img/folder.ico" />essay</a></li>
-				
-				<li><a href="/tag/others/" title="others"><img src="/assets/img/folder.ico" />others</a></li>
+				<li><a href="/tag/web/" title="web"><img src="/assets/img/folder.ico" />web</a></li>
 				
 			</ul>
 				</li>
@@ -48,14 +46,16 @@
 			
 				<ul>
 					
-					<li><a href="/20171121/FirstPage" title="我的第一篇文章"><img src="/assets/img/file.ico" title="我的第一篇文章" />我的第一篇文章</a></li>
+					<li><a href="/20171121/ddd" title="test blog"><img src="/assets/img/file.ico" title="test blog" />test blog</a></li>
+					
+					<li><a href="/20171121/FirstPage" title="jekyll blog"><img src="/assets/img/file.ico" title="jekyll blog" />jekyll blog</a></li>
 					
 				</ul>
 			
 		</div>
 		<div class="post_total">
 			
-				<div class="left">1 object(s)</div>
+				<div class="left">2 object(s)</div>
 			
 			<div class="right">&nbsp;</div>
 		</div>
@@ -64,7 +64,7 @@
         <div class="content">
 			<div class="post_title">
 				<img src="/assets/img/file.png" />
-				<h1>我的第一篇文章</h1>
+				<h1>jekyll blog</h1>
 				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
 				<div class="btn btn_max"><span class="fa fa-window-maximize"></span></div>
 				<div class="btn"><span class="fa fa-window-minimize"></span></div>
@@ -73,200 +73,7 @@
 				<li>November 21, 2017</li>
 			</ul>
 			<div class="post_content">
-        		<h1 id="guide">Guide</h1>
-
-<p>这是一篇讲解如何正确使用 <strong>Markdown</strong> 的排版示例，学会这个很有必要，能让你的文章有更佳清晰的排版。</p>
-
-<blockquote>
-  <p>引用文本：Markdown is a text formatting syntax inspired</p>
-</blockquote>
-
-<h2 id="语法指导">语法指导</h2>
-
-<h3 id="普通内容">普通内容</h3>
-
-<p>这段内容展示了在内容里面一些小的格式，比如：</p>
-
-<ul>
-  <li><strong>加粗</strong> - <code>**加粗**</code></li>
-  <li><em>倾斜</em> - <code>*倾斜*</code></li>
-  <li><del>删除线</del> - <code>~~删除线~~</code></li>
-  <li><code>Code 标记</code> - <code>Code 标记</code></li>
-  <li><a href="http://github.com">超级链接</a> - <code>[超级链接](http://github.com)</code></li>
-  <li><a href="mailto:username@gmail.com">username@gmail.com</a> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
-</ul>
-
-<h3 id="提及用户">提及用户</h3>
-
-<p>@foo @bar @someone … 通过 @ 可以在发帖和回帖里面提及用户，信息提交以后，被提及的用户将会收到系统通知。以便让他来关注这个帖子或回帖。</p>
-
-<h3 id="表情符号-emoji">表情符号 Emoji</h3>
-
-<p>支持表情符号，你可以用系统默认的 Emoji 符号（无法支持 Windows 用户）。
-也可以用图片的表情，输入 <code>:</code> 将会出现智能提示。</p>
-
-<h4 id="一些表情例子">一些表情例子</h4>
-
-<p>:smile: :laughing: :dizzy_face: :sob: :cold_sweat: :sweat_smile:  :cry: :triumph: :heart_eyes: :relaxed: :sunglasses: :weary:</p>
-
-<p>:+1: :-1: :100: :clap: :bell: :gift: :question: :bomb: :heart: :coffee: :cyclone: :bow: :kiss: :pray: :sweat_drops: :hankey: :exclamation: :anger:</p>
-
-<h3 id="大标题---heading-3">大标题 - Heading 3</h3>
-
-<p>你可以选择使用 H2 至 H6，使用 ##(N) 打头，H1 不能使用，会自动转换成 H2。</p>
-
-<blockquote>
-  <p>NOTE: 别忘了 # 后面需要有空格！</p>
-</blockquote>
-
-<h4 id="heading-4">Heading 4</h4>
-
-<h5 id="heading-5">Heading 5</h5>
-
-<h6 id="heading-6">Heading 6</h6>
-
-<h3 id="图片">图片</h3>
-
-<pre><code>![alt 文本](http://image-path.png)
-![alt 文本](http://image-path.png "图片 Title 值")
-![设置图片宽度高度](http://image-path.png =300x200)
-![设置图片宽度](http://image-path.png =300x)
-![设置图片高度](http://image-path.png =x200)
-</code></pre>
-
-<h3 id="代码块">代码块</h3>
-
-<h4 id="普通">普通</h4>
-
-<pre><code>*emphasize*    **strong**
-_emphasize_    __strong__
-@a = 1
-</code></pre>
-
-<h4 id="语法高亮支持">语法高亮支持</h4>
-
-<p>如果在 ``` 后面更随语言名称，可以有语法高亮的效果哦，比如:</p>
-
-<h5 id="演示-ruby-代码高亮">演示 Ruby 代码高亮</h5>
-
-<pre><code class="language-ruby">class PostController &lt; ApplicationController
-  def index
-    @posts = Post.last_actived.limit(10)
-  end
-end
-</code></pre>
-
-<h5 id="演示-rails-view-高亮">演示 Rails View 高亮</h5>
-
-<pre><code class="language-erb">&lt;%= @posts.each do |post| %&gt;
-&lt;div class="post"&gt;&lt;/div&gt;
-&lt;% end %&gt;
-</code></pre>
-
-<h5 id="演示-yaml-文件">演示 YAML 文件</h5>
-
-<pre><code class="language-yml">zh-CN:
-  name: 姓名
-  age: 年龄
-</code></pre>
-
-<blockquote>
-  <p>Tip: 语言名称支持下面这些: <code>ruby</code>, <code>python</code>, <code>js</code>, <code>html</code>, <code>erb</code>, <code>css</code>, <code>coffee</code>, <code>bash</code>, <code>json</code>, <code>yml</code>, <code>xml</code> …</p>
-</blockquote>
-
-<h3 id="有序无序列表">有序、无序列表</h3>
-
-<h4 id="无序列表">无序列表</h4>
-
-<ul>
-  <li>Ruby
-    <ul>
-      <li>Rails
-        <ul>
-          <li>ActiveRecord</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Go
-    <ul>
-      <li>Gofmt</li>
-      <li>Revel</li>
-    </ul>
-  </li>
-  <li>Node.js
-    <ul>
-      <li>Koa</li>
-      <li>Express</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="有序列表">有序列表</h4>
-
-<ol>
-  <li>Node.js</li>
-  <li>Express</li>
-  <li>Koa</li>
-  <li>Sails</li>
-  <li>Ruby</li>
-  <li>Rails</li>
-  <li>Sinatra</li>
-  <li>Go</li>
-</ol>
-
-<h3 id="表格">表格</h3>
-
-<p>如果需要展示数据什么的，可以选择使用表格哦</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>header 1</th>
-      <th>header 3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>cell 1</td>
-      <td>cell 2</td>
-    </tr>
-    <tr>
-      <td>cell 3</td>
-      <td>cell 4</td>
-    </tr>
-    <tr>
-      <td>cell 5</td>
-      <td>cell 6</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="段落">段落</h3>
-
-<p>留空白的换行，将会被自动转换成一个段落，会有一定的段落间距，便于阅读。</p>
-
-<p>请注意后面 Markdown 源代码的换行留空情况。</p>
-
-<h3 id="视频插入">视频插入</h3>
-
-<p>目前支持 Youtube 和 Youku 两家的视频插入，你只需要复制视频播放页面，浏览器地址栏的网页 URL 地址，并粘贴到话题／回复文本框，提交以后将自动转换成视频播放器。</p>
-
-<h4 id="例如">例如</h4>
-
-<p><strong>Youtube</strong></p>
-
-<p>https://www.youtube.com/watch?v=CvVvwh3BRq8</p>
-
-<p><strong>Vimeo</strong></p>
-
-<p>https://vimeo.com/199770305</p>
-
-<p><strong>Youku</strong></p>
-
-<p>http://v.youku.com/v_show/id_XMjQzMTY1MDk3Ng==.html</p>
-
-<p>···</p>
+        		<p><img src="https://avatars2.githubusercontent.com/u/24620017?s=400&amp;u=a5dd6122d09a95372e053acb579682f7dda0f7ea&amp;v=4" alt="avatar" /></p>
 
 				
 					<br>

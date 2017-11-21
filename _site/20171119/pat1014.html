@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="/assets/css/atom-one-light.css">
+    
+        <title>PAT1014 福尔摩斯的约会</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/002.css">
+    
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<script src="/assets/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="default_title">
+			<img src="/assets/img/mycomputer.png" />
+			
+				<h1>扩散性百万甜面包的Blog</h1>
+			
+		</div>
+		<ul class="topbar">
+	<a href="/me"><li><u>A</u>bout</li></a>
+	<a href="https://www.zhihu.com/people/Himself65/" target="_blank"><li><u>知</u>乎</li></a>
+	<a href="https://github.com/Himself65" target="_blank"><li><u>G</u>ithub</li></a>
+	<a href="http://www.cnblogs.com/himself65" target="_blank"><li><u>博</u>客园</li></a>
+</ul>
+		<div class="tag_list">
+			<ul id="tag-list">
+				<li><a href="/" ><img src="/assets/img/disk.png" />(C:)</a>
+			<ul>
+				
+				
+				<li><a href="/tag/article/" title="article"><img src="/assets/img/folder.ico" />article</a></li>
+				
+				<li><a href="/tag/essay/" title="essay"><img src="/assets/img/folder.ico" />essay</a></li>
+				
+				<li><a href="/tag/others/" title="others"><img src="/assets/img/folder.ico" />others</a></li>
+				
+			</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="post_list">
+			
+				<ul>
+					
+					<li><a href="/20171119/pat1014" title="PAT1014 福尔摩斯的约会"><img src="/assets/img/file.ico" title="PAT1014 福尔摩斯的约会" />PAT1014 福尔摩斯的约会</a></li>
+					
+					<li><a href="/20171119/FirstPage" title="我的第一篇文章"><img src="/assets/img/file.ico" title="我的第一篇文章" />我的第一篇文章</a></li>
+					
+				</ul>
+			
+		</div>
+		<div class="post_total">
+			
+				<div class="left">2 object(s)</div>
+			
+			<div class="right">&nbsp;</div>
+		</div>
+	</div>
+	
+        <div class="content">
+			<div class="post_title">
+				<img src="/assets/img/file.png" />
+				<h1>PAT1014 福尔摩斯的约会</h1>
+				<a href="/"><div class="btn"><span class="fa fa-times"></span></div></a>
+				<div class="btn btn_max"><span class="fa fa-window-maximize"></span></div>
+				<div class="btn"><span class="fa fa-window-minimize"></span></div>
+			</div>
+			<ul class="topbar">
+				<li>November 19, 2017</li>
+			</ul>
+			<div class="post_content">
+        		<h1 id="福尔摩斯的约会-20">福尔摩斯的约会 (20)</h1>
+
+<blockquote>
+  <p>大侦探福尔摩斯接到一张奇怪的字条：“我们约会吧！ 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;hgsfdk d&amp;Hyscvnm”。大侦探很快就明白了，字条上奇怪的乱码实际上就是约会的时间“星期四 14:04”，因为前面两字符串中第1对相同的大写英文字母（大小写有区分）是第4个字母’D’，代表星期四；第2对相同的字符是’E’，那是第5个英文字母，代表一天里的第14个钟头（于是一天的0点到23点由数字0到9、以及大写字母A到N表示）；后面两字符串第1对相同的英文字母’s’出现在第4个位置（从0开始计数）上，代表第4分钟。现给定两对字符串，请帮助福尔摩斯解码得到约会的时间。</p>
+
+  <p>输入格式：</p>
+
+  <p>输入在4行中分别给出4个非空、不包含空格、且长度不超过60的字符串。</p>
+
+  <p>输出格式：</p>
+
+  <p>在一行中输出约会的时间，格式为“DAY HH:MM”，其中“DAY”是某星期的3字符缩写，即MON表示星期一，TUE表示星期二，WED表示星期三，THU表示星期四，FRI表示星期五，SAT表示星期六，SUN表示星期日。题目输入保证每个测试存在唯一解。</p>
+
+  <p>输入样例：<br />
+3485djDkxh4hhGE<br />
+2984akDfkkkkggEdsb<br />
+s&amp;hgsfdk<br />
+d&amp;Hyscvnm<br />
+输出样例：
+THU 14:04</p>
+</blockquote>
+
+<p>先上代码，还有点问题，暂时没发现</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;string&gt;
+using namespace std;
+string shit[4];
+string date[] =
+    {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
+inline string find_date(char key) {
+    string ans = "";
+    switch (key) 
+    {
+        case 'A':
+            ans = "10";
+            break;
+        case 'B':
+            ans = "11";
+            break;
+        case 'C':
+            ans = "12";
+            break;
+        case 'D':
+            ans = "13";
+            break;
+        case 'E':
+            ans = "14";
+            break;
+        case 'F':
+            ans = "15";
+            break;
+        case 'G':
+            ans = "16";
+            break;
+        case 'H':
+            ans = "17";
+            break;
+        case 'I':
+            ans = "18";
+            break;
+        case 'J':
+            ans = "19";
+            break;
+        case 'K':
+            ans = "20";
+            break;
+        case 'L':
+            ans = "21";
+            break;
+        case 'M':
+            ans = "22";
+            break;
+        case 'N':
+            ans = "23";
+            break;
+    }
+    return ans;
+}
+inline string split(string str,char key){
+    int i = 0;
+    string temp = "";
+    while (str[i++] != key)
+        ;
+    i--;
+    while(i++!=str.length())
+        temp += str[i];
+    return temp;
+}
+int main(){
+    //读取输入
+    for (int i = 0; i &lt; 4; i++)
+    {
+        getline(cin, shit[i]);
+    }
+    //得到星期
+    for (int i = 0; i &lt;= 7; i++)
+    {
+        int temp1 = shit[0].find_first_of('A' + i, 0);
+        int temp2 = shit[1].find_first_of('A' + i, 0);
+        if (temp1 != -1 &amp;&amp; temp2 != -1)
+        {
+            cout &lt;&lt; date[i] + " ";
+            shit[0] = split(shit[0], 'A' + i);
+            shit[1] = split(shit[1], 'A' + i);
+            break;
+        }
+    }
+    //得到小时
+    bool first = true;
+    for (int i = 0; i &lt;= 9; i++)
+    {
+        int temp1 = shit[0].find_first_of('0' + i, 0);
+        int temp2 = shit[1].find_first_of('0' + i, 0);
+        if (temp1 != -1 &amp;&amp; temp2 != -1)
+        {
+            printf("%d", i);
+            first = false;
+            break;
+        }
+    }
+    if(first)
+    for (char i = 'A'; i &lt;= 'N'; i++)
+    {
+        int temp1 = shit[0].find_first_of(i, 0);
+        int temp2 = shit[1].find_first_of(i, 0);
+        if (temp1 != -1 &amp;&amp; temp2 != -1)
+        {
+            printf("%2d", i - 'A' + 10);
+            break;
+        }
+    }
+    cout &lt;&lt; ":";
+    //得到分钟
+    //from 065 to 122
+    for (int i = 65; i &lt;= 122; i++)
+    {
+        int temp1 = shit[2].find_first_of(i, 1);
+        int temp2 = shit[3].find_first_of(i, 1);
+        if (temp1 == -1 || temp2 == -1)
+            continue;
+        else
+        {
+            printf("%02d", temp2);
+            break;
+        }
+    }
+    //system("pause");
+    return 0;
+}
+</code></pre>
+
+				
+					<br>
+<hr>
+<br>
+<div class="donate">
+	<p>喜欢这篇文章吗？<br>
+	可以的话点个收藏！</p>
+	<!--
+	<p>微信支付 <i class="fa fa-btc"></i> 暂时没有<br>支付宝 <i class="fa fa-money"></i> 暂时没有</p>
+	-->
+</div>
+				
+			</div>
+		</div>
+    
+	<script src="/assets/js/001.js"></script>
+	<script src="/assets/js/002.js"></script>
+	<div class="footer">
+		<p>Created by <a href="http://github.com/h01000110" target="_blank">h01000110 (hi)</a> | Code licensed under <a href="https://github.com/h01000110/h01000110.github.io/blob/master/LICENSE" target="_blank">MIT License</a></p>
+	</div>
+</body>
+</html>

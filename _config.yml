@@ -1,10 +1,10 @@
 permalink: /:year:month:day/:title
-url: #Your url here
+url: himself65.com
 baseurl: /project
 
 # variables
-name: Your Site Name
-description: Your description here
+name: 扩散性百万甜面包的Blog
+description: Hello,world
 google_verification: null
 
 

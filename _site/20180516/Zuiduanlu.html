@@ -75,7 +75,87 @@
 				<li>May 16, 2018</li>
 			</ul>
 			<div class="post_content">
-        		<h1 id="spfa">spfa</h1>
+        		<h2 id="bellman-ford">Bellman-Ford</h2>
+
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;cstring&gt;
+using namespace std;
+
+typedef long long ll;
+
+const int M=1000000+5;
+const int inf=1e9+5;
+int a,b;
+int dis[M];
+int ans[M];
+
+
+void init(){
+    memset(dis,-1,sizeof(dis));
+    dis[1]=0;
+}
+
+
+
+int x[M];
+int y[M];
+int z[M];
+
+int main()
+{
+    int n;
+    scanf("%d",&amp;n);
+    while(n--){
+        scanf("%d%d",&amp;a,&amp;b);
+        init();
+        for(int i=1;i&lt;=b;i++){
+            scanf("%d%d%d",&amp;x[i],&amp;y[i],&amp;z[i]);
+        }
+        
+        while(true){
+            bool update=false;
+            for(int i=1;i&lt;=b;i++){
+                if(dis[x[i]]!=-1&amp;&amp;(dis[y[i]]==-1||dis[y[i]]&gt;dis[x[i]]+z[i])){
+                    dis[y[i]]=dis[x[i]]+z[i];
+                    update=true;
+                }
+            }
+            if(!update){
+                break;
+            }
+        }
+        for(int i=2;i&lt;=a;i++){
+            ans[i]=dis[i];
+        }
+
+        init();
+        while(true){
+            bool update=false;
+            for(int i=1;i&lt;=b;i++){
+                if(dis[y[i]]!=-1&amp;&amp;(dis[x[i]]==-1||dis[x[i]]&gt;dis[y[i]]+z[i])){
+                    dis[x[i]]=dis[y[i]]+z[i];
+                    update=true;
+                }
+            }
+            if(!update){
+                break;
+            }
+        }
+        
+        long long res=0;
+        for(int i=2;i&lt;=a;i++){
+            res+=ans[i]+dis[i];
+        }
+        printf("%I64d\n",res);
+
+    }
+
+
+    return 0;
+}
+</code></pre>
 
 				
 					<br>

@@ -204,7 +204,7 @@ int main()
 
 ```
 
-## Dijkstra+堆优化
+## Dijkstra+堆优化(AC)
 
 ```
 #include <iostream>  

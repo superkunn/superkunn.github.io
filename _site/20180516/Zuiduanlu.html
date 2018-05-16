@@ -77,7 +77,7 @@
 			<div class="post_content">
         		<ul>
   <li>最短路的核心是松弛操作，即当前的最短距离大于先通过另一个点再到达此处的距离则进行松弛。</li>
-  <li>以<a href="http://poj.org/problem?id=15">poj1511</a>以1为起点正反边求两次最短路即可。</li>
+  <li>以<a href="http://poj.org/problem?id=15">poj1511</a>为例讨论最短路问题，题意是求1到各点再回到1的最短路之和，以1为起点正反边求两次最短路即可。</li>
 </ul>
 
 <h2 id="bellman-fordtle">Bellman-Ford(TLE)</h2>
@@ -278,6 +278,111 @@ int main()
 
 </code></pre>
 
+<h2 id="dijkstra堆优化ac">Dijkstra+堆优化(AC)</h2>
+
+<pre><code>#include &lt;iostream&gt;  
+#include &lt;cstring&gt;  
+#include &lt;cstdio&gt;  
+#include &lt;queue&gt;  
+#include &lt;cmath&gt;  
+#include &lt;vector&gt;  
+#include &lt;algorithm&gt;  
+#include &lt;math.h&gt;  
+using namespace std;  
+  
+typedef long long ll;  
+typedef pair&lt;ll,int&gt; P;  
+  
+const int MAX=1000000+5;  
+const ll INF=1000000000+9;  
+  
+int n,q;  
+int head[MAX];  
+int aa[MAX];  
+int bb[MAX];  
+int cc[MAX];  
+struct node{  
+   int to;  
+   int v;  
+   int next;  
+};  
+node edge[MAX];  
+  
+ll d[MAX];  
+  
+int tot;  
+  
+void addedge(int a,int b,int c){  
+    edge[tot].to=b;  
+    edge[tot].v=c;  
+    edge[tot].next=head[a];  
+    head[a]=tot++;  
+    return;  
+}  
+  
+void dij(){  
+    priority_queue&lt;P, vector&lt;P&gt;, greater&lt;P&gt; &gt; pque;  
+    fill(d+1,d+1+n,INF);  
+    d[1]=0;  
+    pque.push(P(0,1));  
+    while(!pque.empty()){  
+        P p=pque.top();  
+        pque.pop();  
+        int vv=p.second;  
+        if(d[vv]&lt;p.first)continue;  
+        for(int i=head[vv];i!=0;i=edge[i].next){  
+            if(d[edge[i].to]&gt;d[vv]+edge[i].v){  
+                d[edge[i].to]=d[vv]+edge[i].v;  
+                pque.push(P(d[edge[i].to],edge[i].to));  
+            }  
+        }  
+    }  
+    return;  
+}  
+  
+  
+void solve(){  
+    int kase;  
+    scanf("%d",&amp;kase);  
+    while(kase--){  
+  
+        ll ans=0;  
+        scanf("%d %d",&amp;n,&amp;q);  
+        tot=1;  
+        memset(head,0,sizeof(head));  
+        for(int i=1;i&lt;=q;i++){  
+            scanf("%d %d %d",&amp;aa[i],&amp;bb[i],&amp;cc[i]);  
+            addedge(aa[i],bb[i],cc[i]);  
+        }  
+        dij();  
+        for(int i=2;i&lt;=n;i++){  
+            ans+=d[i];  
+        }  
+  
+        tot=1;  
+        memset(head,0,sizeof(head));  
+        for(int i=1;i&lt;=q;i++){  
+            addedge(bb[i],aa[i],cc[i]);  
+        }  
+        dij();  
+  
+        for(int i=2;i&lt;=n;i++){  
+            ans+=d[i];  
+        }  
+  
+        printf("%lld\n",ans);  
+  
+    }  
+  
+    return;  
+}  
+  
+int main()  
+{  
+    solve();  
+    return 0;  
+}  
+</code></pre>
 
 				
 					<br>

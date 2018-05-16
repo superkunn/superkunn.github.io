@@ -77,10 +77,10 @@
 			<div class="post_content">
         		<ul>
   <li>最短路的核心是松弛操作，即当前的最短距离大于先通过另一个点再到达此处的距离则进行松弛。</li>
-  <li>以<a href="http://poj.org/problem?id=15">poj1511</a>以1为起点正反边求两次最短路即可。
-    <h3 id="bellman-fordtle">Bellman-Ford(TLE)</h3>
-  </li>
+  <li>以<a href="http://poj.org/problem?id=15">poj1511</a>以1为起点正反边求两次最短路即可。</li>
 </ul>
+
+<h2 id="bellman-fordtle">Bellman-Ford(TLE)</h2>
 
 <p>朴素的Bellman-Ford算法过不了，因为有大量重复计算，所以要用队列进行优化。</p>
 <pre><code class="language-c++">#include &lt;cstdio&gt;
@@ -162,7 +162,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="spfaac">spfa(AC)</h3>
+<h2 id="spfaac">spfa(AC)</h2>
 
 <ul>
   <li>注意不要用vector</li>

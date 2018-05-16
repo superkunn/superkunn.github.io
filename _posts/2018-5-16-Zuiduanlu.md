@@ -204,3 +204,109 @@ int main()
 
 ```
 
+## Dijkstra+堆优化
+
+```
+#include <iostream>  
+#include <cstring>  
+#include <cstdio>  
+#include <queue>  
+#include <cmath>  
+#include <vector>  
+#include <algorithm>  
+#include <math.h>  
+using namespace std;  
+  
+typedef long long ll;  
+typedef pair<ll,int> P;  
+  
+const int MAX=1000000+5;  
+const ll INF=1000000000+9;  
+  
+int n,q;  
+int head[MAX];  
+int aa[MAX];  
+int bb[MAX];  
+int cc[MAX];  
+struct node{  
+   int to;  
+   int v;  
+   int next;  
+};  
+node edge[MAX];  
+  
+ll d[MAX];  
+  
+int tot;  
+  
+void addedge(int a,int b,int c){  
+    edge[tot].to=b;  
+    edge[tot].v=c;  
+    edge[tot].next=head[a];  
+    head[a]=tot++;  
+    return;  
+}  
+  
+void dij(){  
+    priority_queue<P, vector<P>, greater<P> > pque;  
+    fill(d+1,d+1+n,INF);  
+    d[1]=0;  
+    pque.push(P(0,1));  
+    while(!pque.empty()){  
+        P p=pque.top();  
+        pque.pop();  
+        int vv=p.second;  
+        if(d[vv]<p.first)continue;  
+        for(int i=head[vv];i!=0;i=edge[i].next){  
+            if(d[edge[i].to]>d[vv]+edge[i].v){  
+                d[edge[i].to]=d[vv]+edge[i].v;  
+                pque.push(P(d[edge[i].to],edge[i].to));  
+            }  
+        }  
+    }  
+    return;  
+}  
+  
+  
+void solve(){  
+    int kase;  
+    scanf("%d",&kase);  
+    while(kase--){  
+  
+        ll ans=0;  
+        scanf("%d %d",&n,&q);  
+        tot=1;  
+        memset(head,0,sizeof(head));  
+        for(int i=1;i<=q;i++){  
+            scanf("%d %d %d",&aa[i],&bb[i],&cc[i]);  
+            addedge(aa[i],bb[i],cc[i]);  
+        }  
+        dij();  
+        for(int i=2;i<=n;i++){  
+            ans+=d[i];  
+        }  
+  
+        tot=1;  
+        memset(head,0,sizeof(head));  
+        for(int i=1;i<=q;i++){  
+            addedge(bb[i],aa[i],cc[i]);  
+        }  
+        dij();  
+  
+        for(int i=2;i<=n;i++){  
+            ans+=d[i];  
+        }  
+  
+        printf("%lld\n",ans);  
+  
+    }  
+  
+    return;  
+}  
+  
+int main()  
+{  
+    solve();  
+    return 0;  
+}  
+```

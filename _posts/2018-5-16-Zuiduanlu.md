@@ -9,7 +9,8 @@ tags: graph
 ## Bellman-Ford(TLE)
 
 朴素的Bellman-Ford算法过不了，因为有大量重复计算，所以要用队列进行优化。
-```c++
+
+```
 #include <cstdio>
 #include <iostream>
 #include <queue>
@@ -93,7 +94,7 @@ int main()
 
 * 注意不要用vector
 
-```c++
+```
 #include <cstdio>
 #include <iostream>
 #include <queue>

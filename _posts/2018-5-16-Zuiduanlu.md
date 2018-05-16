@@ -4,7 +4,7 @@ title: "最短路"
 tags: graph
 ---
 * 最短路的核心是松弛操作，即当前的最短距离大于先通过另一个点再到达此处的距离则进行松弛。
-* 以[poj1511](http://poj.org/problem?id=15以1为起点正反边求两次最短路即可。
+* 以[poj1511](http://poj.org/problem?id=15)以1为起点正反边求两次最短路即可。
 ### Bellman-Ford(TLE)
 
 朴素的Bellman-Ford算法过不了，因为有大量重复计算，所以要用队列进行优化。

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "非递归线段树"
-tags: graph
+tags: datastruct
 ---
 
 ```
